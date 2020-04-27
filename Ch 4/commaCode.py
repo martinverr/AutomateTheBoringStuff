@@ -16,19 +16,12 @@ def list2string(listArg):
     # if: listArg contains 1 element, then: return it
     if len(listArg) == 1:
         return listArg[0]
-    
-    string = ""
-    lenListArg = len(listArg)
 
     # Concatenate listArg elements to string, except the last
-    for i in range(lenListArg - 1):
-        string += listArg[i]
-        if i == lenListArg - 2:
-            continue
-        string += ", "
+    string = ', '.join(listArg[:-1])
 
     # Add the last item
-    string = string + " and " + listArg[lenListArg-1]
+    string = string + " and " + listArg[len(listArg)-1]
 
     return string
 
